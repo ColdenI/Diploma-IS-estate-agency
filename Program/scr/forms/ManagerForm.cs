@@ -24,6 +24,8 @@ namespace Program.scr.forms
                 toolStripButton4.Visible = false;
                 toolStripButton5.Visible = false;
             }
+
+            ShowControl(new userControls.Properties_ViewUserControl());
         }
 
         private void ShowControl(UserControl control)

@@ -63,7 +63,6 @@
             textBox_login.Name = "textBox_login";
             textBox_login.Size = new Size(229, 31);
             textBox_login.TabIndex = 3;
-            textBox_login.Text = "admin1";
             // 
             // textBox_password
             // 
@@ -73,7 +72,6 @@
             textBox_password.PasswordChar = '*';
             textBox_password.Size = new Size(229, 31);
             textBox_password.TabIndex = 4;
-            textBox_password.Text = "pass123";
             // 
             // button_login
             // 
