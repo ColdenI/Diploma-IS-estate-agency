@@ -52,6 +52,7 @@ CREATE TABLE ManagerProfiles (
     Phone NVARCHAR(20),
     LicenseNumber NVARCHAR(50),
     Email NVARCHAR(100),
+    Post NVARCHAR(100),
     HireDate DATETIME DEFAULT GETDATE(),
     CONSTRAINT FK_ManagerProfiles_Users FOREIGN KEY (UserId) 
         REFERENCES Users(UserId) ON DELETE CASCADE ON UPDATE CASCADE

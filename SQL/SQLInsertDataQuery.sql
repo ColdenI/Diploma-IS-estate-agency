@@ -72,11 +72,11 @@ GO
 -- =============================================
 -- Заполняем ManagerProfiles (30 записей)
 -- =============================================
-INSERT INTO ManagerProfiles (UserId, FullName, Phone, LicenseNumber, Email) VALUES
-(1, 'Александров Алексей Александрович', '+79123456819', '', 'alexandrov@example.com'),
-(2, 'Богданова Марина Сергеевна', '+79123456820', 'LIC002', 'bogdanova@example.com'),
-(3, 'Воробьёв Павел Викторович', '+79123456821', 'LIC003', 'vorobyov@example.com'),
-(4, 'Голубев Артём Романович', '+79123456822', 'LIC004', 'golubev@example.com');
+INSERT INTO ManagerProfiles (UserId, FullName, Phone, LicenseNumber, Email, Post) VALUES
+(1, 'Александров Алексей Александрович', '+79123456819', '', 'alexandrov@example.com', 'Админестратор'),
+(2, 'Богданова Марина Сергеевна', '+79123456820', 'LIC002', 'bogdanova@example.com', 'Риелтор'),
+(3, 'Воробьёв Павел Викторович', '+79123456821', 'LIC003', 'vorobyov@example.com', 'Риелтор'),
+(4, 'Голубев Артём Романович', '+79123456822', 'LIC004', 'golubev@example.com', 'Риелтор');
 GO
 
 -- =============================================
