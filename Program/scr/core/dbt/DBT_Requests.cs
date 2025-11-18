@@ -50,6 +50,43 @@ namespace Program.scr.core.dbt
             catch { objs = null; }
             return objs;
         }
+        public static List<DBT_Requests> GetAllByClientId(int id)
+        {
+            var objs = new List<DBT_Requests>();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(SQL._sqlConnectStr))
+                {
+                    connection.Open();
+                    using (var query = connection.CreateCommand())
+                    {
+                        query.CommandText = $"SELECT * FROM Requests WHERE ClientId = {id}";
+                        using (var reader = query.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                var obj = new DBT_Requests();
+
+                                obj.RequestId = reader.GetInt32(0);
+                                obj.ClientId = reader.GetInt32(1);
+                                obj.DesiredType = reader.GetString(2);
+                                if (reader.IsDBNull(3)) obj.BudgetMin = null;
+                                else obj.BudgetMin = reader.GetDecimal(3);
+                                if (reader.IsDBNull(4)) obj.BudgetMax = null;
+                                else obj.BudgetMax = reader.GetDecimal(4);
+                                obj.Status = reader.GetString(5);
+                                if (reader.IsDBNull(6)) obj.CreatedAt = null;
+                                else obj.CreatedAt = DateTime.Parse(reader.GetValue(6).ToString());
+
+                                objs.Add(obj);
+                            }
+                        }
+                    }
+                }
+            }
+            catch { objs = null; }
+            return objs;
+        }
 
         public static DBT_Requests GetById(int id)
         {

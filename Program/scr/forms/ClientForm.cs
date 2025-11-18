@@ -18,5 +18,15 @@ namespace Program.scr.forms
         }
 
         private void button_Click(object sender, EventArgs e) => new SubmitRequestForm(Client).ShowDialog();
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new ClientRequestsForm(Client).ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new ClientDealsForm(Client).ShowDialog();
+        }
     }
 }
